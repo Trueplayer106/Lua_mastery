@@ -1,6 +1,7 @@
-numbers = {20, 10, 30, 40, 50, 65, 12, 11}
-numbers[19] = 100
+math.randomseed(os.time()) -- Seed the random number generator
 
-for i, v in pairs(numbers) do
-   print(i, v)
+if math.random() < 0.50 then  -- About 50% chance
+    print("Hacked successfully!")
+else
+    print("Unsuccessful hack attempt.")
 end
