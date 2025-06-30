@@ -1,21 +1,24 @@
--- This script gives a random chance of rolling a common up to a mythical item, and prints the current date and time in two formats.
+-- Lua Gacha Roll Script: Simulates rolling for items of different rarities and prints the current date/time in two formats.
+
 math.randomseed(os.time()) -- Seed the random number generator
 
-if math.random() < 0.7 then  -- About 0.7% chance
-    print("Wrolled mythical item")
-elseif math.random() < 0.4 then
-    print("Wrolled epic item")
-elseif math.random() < 0.2 then
-    print("Wrolled rolled rare ")
-elseif math.random() < 0.4 then
-    print("Wrolled Uncommon ")
-else
-    print("Wrolled legendary ")
+-- Roll once and determine the item based on probability thresholds.
+local roll = math.random()
+if roll < 0.01 then                 -- 1% chance
+    print("Rolled mythical item")
+elseif roll < 0.06 then             -- 5% chance (cumulative: < 6%)
+    print("Rolled legendary item")
+elseif roll < 0.20 then             -- 14% chance (cumulative: < 20%)
+    print("Rolled epic item")
+elseif roll < 0.50 then             -- 30% chance (cumulative: < 50%)
+    print("Rolled rare item")
+else                                -- 50% chance
+    print("Rolled common item")
 end
 
-   -- get the system current date and time
+-- Print the current system date and time in two formats
 local currentDate = os.date("%Y-%m-%d %H:%M:%S")
-print(currentDate)
--- get the system current date and time in a different format
+print("Current date/time (YYYY-MM-DD HH:MM:SS): " .. currentDate)
+
 local currentDate2 = os.date("%d/%m/%Y %H:%M:%S")
-print(currentDate2)
+print("Current date/time (DD/MM/YYYY HH:MM:SS): " .. currentDate2)
