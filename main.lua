@@ -16,9 +16,27 @@ else                                -- 50% chance
     print("Rolled common item")
 end
 
--- Print the current system date and time in two formats
-local currentDate = os.date("%Y-%m-%d %H:%M:%S")
-print("Current date/time (YYYY-MM-DD HH:MM:SS): " .. currentDate)
+-- print message 200 times instead of infinite loop Also, usign a for loop to print a message 200 times.
+-- This is a simple for loop that iterates from 1 to 200 and prints a message.
+for i = 1, 200 do
+    print("This is a message number " )
+end
 
-local currentDate2 = os.date("%d/%m/%Y %H:%M:%S")
-print("Current date/time (DD/MM/YYYY HH:MM:SS): " .. currentDate2)
+---- using while loop
+while true do
+    print("This is an infinite loop")
+    break  -- to prevent actual infinite loop in the tutorial
+end
+
+-- using_in a generic for loop to iterate through the numbers table
+numbers = { 20, 10, 30, 40, 50, 65, 12, 11}
+
+for _, v in ipairs(numbers) do
+   print(v)
+end
+
+-- using i,v generic for loop to iterate through the numbers table
+numbers = { 20, 10, 30, 40, 50, 65, 12, 11, 10 ,15, 25, 35, 45, 55, 60, 70, 80, 90, 100 }
+for i, v in ipairs(numbers) do
+   print(i, v)
+end
