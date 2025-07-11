@@ -40,3 +40,17 @@ numbers = { 20, 10, 30, 40, 50, 65, 12, 11, 10 ,15, 25, 35, 45, 55, 60, 70, 80, 
 for i, v in ipairs(numbers) do
    print(i, v)
 end
+
+
+-- get the start and end index
+-- string.find() returns nil if string not found
+startIndex, endIndex = string.find("Welcome to tutorialspoint", "to")
+
+-- print start and end indexes    
+print(startIndex, endIndex)   -->  7      9
+
+-- unpack an array
+a, b, c = table.unpack({10, 20, 30})
+
+-- print all variables
+print(a, b, c)  -->  10      20      30  	
